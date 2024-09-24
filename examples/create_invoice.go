@@ -33,11 +33,11 @@ func showInvoiceInfo(invoice *cryptobot.Invoice) {
 		"Hash: %s\n"+
 		"Asset: %s\n"+
 		"Amount: %s\n"+
-		"Fee: %s\n"+
+		"FeeAmount: %s\n"+
 		"PayUrl: %s\n"+
 		"Description: %s\n"+
 		"CreatedAt: %s\n"+
-		"UsdRate: %s\n"+
+		"PaidUsdRate: %s\n"+
 		"AllowComments: %v\n"+
 		"AllowAnonymous: %v\n"+
 		"ExpirationDate: %s\n"+
@@ -53,11 +53,11 @@ func showInvoiceInfo(invoice *cryptobot.Invoice) {
 		invoice.Hash,
 		invoice.Asset,
 		invoice.Amount,
-		invoice.Fee,
+		invoice.FeeAmount,
 		invoice.PayUrl,
 		invoice.Description,
 		invoice.CreatedAt,
-		invoice.UsdRate,
+		invoice.PaidUsdRate,
 		invoice.AllowComments,
 		invoice.AllowAnonymous,
 		invoice.ExpirationDate,

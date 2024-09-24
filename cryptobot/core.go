@@ -46,14 +46,41 @@ type Invoice struct {
 	// Currency code. Currently, can be “BTC”, “TON”, “ETH”, “USDT”, “USDC” or “BUSD”.
 	Asset string `json:"asset"`
 
+	// Optional. Fiat currency code. Available only if the value of the field currency_type is “fiat”. Currently one of “USD”, “EUR”, “RUB”, “BYN”, “UAH”, “GBP”, “CNY”, “KZT”, “UZS”, “GEL”, “TRY”, “AMD”, “THB”, “INR”, “BRL”, “IDR”, “AZN”, “AED”, “PLN” and “ILS".
+	Fiat string `json:"fiat"`
+
 	// Amount of the invoice.
 	Amount string `json:"amount"`
+
+	// Optional. Cryptocurrency alphabetic code for which the invoice was paid. Available only if currency_type is “fiat” and status is “paid”.
+	PaidAsset string `json:"paid_asset"`
+
+	// Optional. Amount of the invoice for which the invoice was paid. Available only if currency_type is “fiat” and status is “paid”.
+	PaidAmount string `json:"paid_amount"`
+
+	// Optional. The rate of the paid_asset valued in the fiat currency. Available only if the value of the field currency_type is “fiat” and the value of the field status is “paid”.
+	PaidFiatRate string `json:"paid_fiat_rate"`
+
+	// Optional. List of assets which can be used to pay the invoice. Available only if currency_type is “fiat”. Currently, can be “USDT”, “TON”, “BTC”, “ETH”, “LTC”, “BNB”, “TRX” and “USDC” (and “JET” for testnet).
+	AcceptedAssets []string `json:"accepted_assets"`
+
+	// Optional. Asset of service fees charged when the invoice was paid. Available only if status is “paid”.
+	FeeAsset string `json:"fee_asset"`
 
 	// Optional. Amount of service fees charged when the invoice was paid. Available only if status is “paid”.
 	FeeAmount string `json:"fee_amount"`
 
+	// Deprecated. URL should be provided to the user to pay the invoice (described here for reference).
+	PayUrl string `json:"pay_url"`
+
 	// URL should be presented to the user to pay the invoice. Replace pay_url from API 1.2
 	BotInvoiceUrl string `json:"bot_invoice_url"`
+
+	// Use this URL to pay an invoice to the Telegram Mini App version.
+	MiniAppInvoiceUrl string `json:"mini_app_invoice_url"`
+
+	// Use this URL to pay an invoice to the Web version of Crypto Bot.
+	WebAppInvoiceUrl string `json:"web_app_invoice_url"`
 
 	// Optional. Description for this invoice.
 	Description string `json:"description"`
