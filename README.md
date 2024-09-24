@@ -46,7 +46,8 @@ func main() {
 
 ```golang
 invoice, err := client.CreateInvoice(cryptobot.CreateInvoiceRequest{
-    Asset:          cryptobot.USDT,
+    CurrencyType:   cryptobot.Crypto, // optional. by default is crypto
+    Asset:          cryptobot.USDT, // optional.  Required if currency_type is “crypto”
     Amount:         "125.50",
     Description:    "Description for the user",
     HiddenMessage:  "After invoice is paid user will see this message",
