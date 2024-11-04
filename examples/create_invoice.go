@@ -34,7 +34,7 @@ func showInvoiceInfo(invoice *cryptobot.Invoice) {
 		"Asset: %s\n"+
 		"Amount: %s\n"+
 		"FeeAmount: %s\n"+
-		"PayUrl: %s\n"+
+		"BotInvoiceUrl: %s\n"+
 		"Description: %s\n"+
 		"CreatedAt: %s\n"+
 		"PaidUsdRate: %s\n"+
@@ -54,7 +54,7 @@ func showInvoiceInfo(invoice *cryptobot.Invoice) {
 		invoice.Asset,
 		invoice.Amount,
 		invoice.FeeAmount,
-		invoice.PayUrl,
+		invoice.BotInvoiceUrl,
 		invoice.Description,
 		invoice.CreatedAt,
 		invoice.PaidUsdRate,
